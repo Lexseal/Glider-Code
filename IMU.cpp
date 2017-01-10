@@ -136,7 +136,7 @@ struct IMUData IMU::updateIMU()
   antiDistortion();
   tiltCompensation();
 
-  MPU.gyroZ = (int)(MPU.gyroZ*0.6 + (atan2((float)x, (float)y)/3.14*180)*0.4);
+  MPU.gyroZ = (int)(MPU.gyroZ*0.8 + (atan2((float)x, (float)y)/3.14*180)*0.2);
   
   attiData.xAxis = MPU.gyroX;
   attiData.yAxis = MPU.gyroY;

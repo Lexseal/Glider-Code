@@ -2,24 +2,24 @@
 
 bool GPS::getGPSInfo()
 {
-  while (serialGPS.available())
+  while (Serial.available())
   {
-    if (serialGPS.read() == '$')
+    if (Serial.read() == '$')
     {
-      if (serialGPS.read() == 'G')
+      if (Serial.read() == 'G')
       {
-        if (serialGPS.read() == 'P')
+        if (Serial.read() == 'P')
         {
-          if (serialGPS.read() == 'R')
+          if (Serial.read() == 'R')
           {
-            if (serialGPS.read() == 'M')
+            if (Serial.read() == 'M')
             {
-              if (serialGPS.read() == 'C')
+              if (Serial.read() == 'C')
               {
-                if (serialGPS.read() == ',')
+                if (Serial.read() == ',')
                 {
                   char NMEAChar[61];
-                  serialGPS.readBytesUntil('*', NMEAChar, 61);
+                  Serial.readBytesUntil('*', NMEAChar, 61);
 
                   String _string = getLoc(NMEAChar);
 

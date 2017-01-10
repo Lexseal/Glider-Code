@@ -18,10 +18,11 @@ struct GPSInfo
 class GPS
 {
   public: 
-    GPS(SoftwareSerial& softSerial) : serialGPS(softSerial) 
+    /*GPS(SoftwareSerial& softSerial) : serialGPS(softSerial) 
     {
       serialGPS.begin(38400);
-    }
+    }*/
+    
     bool getGPSInfo();
 
     struct GPSInfo _GPSInfo;
@@ -33,7 +34,7 @@ class GPS
     float getLongitude(String str);
     float getCraftSpeed(String str);
     int getHeading(String str);
-    SoftwareSerial serialGPS;
+    //SoftwareSerial serialGPS;
 };
 
 #endif
